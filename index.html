@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The perfect breakfast</title>
+    <script
+      src="https://kit.fontawesome.com/d6791d528e.js"
+      crossorigin="anonymous"
+    ></script>
+   <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">
+        <h1>THE PERFECT BREAKFAST</h1>
+        <h2>What should I include in a <span>healthy breakfast?</span></h2>
+        <hr />
+      </div>
+      <div class="picture">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/047/914/original/healthy_breakfast_2.jpg?1665317134"
+          alt="Healthy breakfast"
+        />
+        <button class="saveButton"><i class="fa fa-solid fa-heart"></i></button>
+      </div>
+      <div class="content">
+        <ul>
+          <li>
+            <h3>CARBOHYDRATES</h3>
+            <p>
+              Since glucose from carbohydrates is the primary energy source
+              throughout your system, most of your calories, or
+              <strong>45 to 65 percent</strong>, need to come from this
+              macronutrient.
+            </p>
+            <p>
+              <em
+                >Ex: Wholemeal bread, fruit (banana, apple or orange) and
+                nuts.</em
+              >
+            </p>
+          </li>
+          <li>
+            <h3>PROTEINS</h3>
+            <p>
+              Protein is well-known for its role in adding to lean muscle mass,
+              but protein also gives structure to all cells and provides energy
+              when carbs and fat are not available. Your diet should consist of
+              <strong>10 to 35 percent</strong> protein
+            </p>
+            <p>
+              <em
+                >Ex: Egg, chicken, ham, turkey, almonds, cheese, tuna, salmon
+                and chickpea hummus.</em
+              >
+            </p>
+          </li>
+          <li>
+            <h3>HEALTHY FATS:</h3>
+            <p>
+              Fat is a structural component of cells and blood vessels. You also
+              need fat to absorb vitamins A, D, E and K, as well as to provide
+              energy when your system runs out of glucose. Between to
+              <strong>35 percent</strong> of your total calories should come
+              from fat
+            </p>
+            <p><em>Ex: Olive oil, avocado, butter, egg, nuts and milk</em></p>
+          </li>
+          <li>
+            <h3>FIBER:</h3>
+            <p>
+              Fiber is a carbohydrate; however, it does not provide calories or
+              convert to glucose. You need fiber for bowel health and
+              regularity. It helps push out waste and allows nutrients to absorb
+              through intestinal walls.
+            </p>
+            <p>
+              <em
+                >Ex: Nuts, fruit, whole wheat bread, lettuce and whole grains
+                such as oatmeal.</em
+              >
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="footer">
+        <hr />
+        <p>
+          If you want to know more about macronutrients, visit: <br />
+          <a
+            href="https://en.wikipedia.org/wiki/List_of_macronutrients"
+            target="_blank"
+          >
+            <strong>Wikipedia Site</strong></a
+          >
+        </p>
+        <p class="sharedMessage">If you liked it, share with your friends</p>
+        <button class="shareButton">
+          <i class="fa fa-solid fa-share"></i>
+        </button>
+        <br />
+        <br />
+        <hr />
+      </div>
+    </div>
+    <script>
+      function savePost() {
+        alert("To save this post, you should have an account.");
+        let userName = prompt("Insert user name");
+        let age = prompt("Insert user age");
+
+        if (age >= 18) {
+          let email = prompt("Insert email");
+          alert("User " + userName + " has been created");
+          let savePost = prompt("Do you want to save this post?");
+          savePost = savePost.toLowerCase();
+          if (savePost === "yes") {
+            alert("This post has been succesfully saved 💕");
+          } else {
+            alert("OPS! This post hasn't been saved! 🆑");
+          }
+        } else {
+          alert(
+            "Sorry, " +
+              userName +
+              "! You should be older than 18 years to create an account!"
+          );
+        }
+      }
+
+      let saveButton = document.querySelector(".saveButton");
+      saveButton.addEventListener("click", savePost);
+
+      let shareButton = document.querySelector(".shareButton");
+      shareButton.addEventListener("click", sharePost);
+
+      function sharePost() {
+        let friendName = prompt("What's your friend's name?");
+        let email = prompt("Please enter your friend's email");
+        let sharedResponse = document.querySelector(".sharedMessage");
+
+        sharedResponse.innerHTML =
+          "Congrats! This post has been succesfully shared with " + friendName;
+        shareButton.style.background = "#00b347";
+      }
+    </script>
+  </body>
+</html>
